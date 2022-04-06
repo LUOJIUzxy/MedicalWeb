@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>医生团队</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/nivo-lightbox.css">
+    <link rel="stylesheet" href="/static/css/nivo_themes/default/default.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/carousel.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body data-spy="scroll" data-target=".navbar-collapse">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+        <span class="icon icon-bar"></span>
+      </button>
+
+            <a href="#home" class="navbar-brand smoothScroll" style="font-size:150%"><span class="glyphicon glyphicon-home"></span>电子科大校医院预约平台</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#home" class="smoothScroll"></a></li>
+        <li><a href="#service" class="smoothScroll"></a></li>
+        <li><a href="#about" class="smoothScroll"></a></li>
+        <li><a href="#portfolio" class="smoothScroll">{{department}}</a></li>
+        <li><a href="/home/" class="smoothScroll"><span class="glyphicon glyphicon-home" ></span>首页</a></li>
+          <li><a href="/personal/" class="smoothScroll"><span class="glyphicon glyphicon-user"></span>个人中心</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- START THE FEATURETTES -->
+
+
+      <hr class="featurette-divider">
+       <ul style="list-style-type: none">
+        {% for doctor in doctors %}
+        <li >
+      <div class="row featurette" style="border:3px solid #D6D6D6;padding: 25px;margin: 25px;">
+        <div class="col-md-7 col-md-push-5" style="font-size: 18px">
+          <p style="margin-bottom: 10px;">姓名：{{doctor.name}}</p>
+          <p style="margin-bottom: 10px;">性别：{{doctor.gender}}</p>
+          <p>特长：{{doctor.speciality}}</p>
+          <button style="margin-top:10px; "><a href="{{doctor.get_absolute_url}}">进行预约></a></button>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="/static/images/doc{{doctor.dor_id}}.jpg" alt="默认医生头像" width = "200" height = "150">
+        </div>
+      </div>
+        </li>
+        {% endfor %}
+    </ul>
+      <hr class="featurette-divider">
+</div><!-- /.container -->
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+
+      <footer>
+  <div class="container">
+    <div class="row">
+
+        <h2>关于我们</h2>
+        <p>清水河校区地址: <span>成都市高新西区（西区） 西源大道2006号 邮编： 611731 电话：028-61830574 急诊科电话： 028-61830120 </span></p>
+        <p>沙河校区地址：<span>成都市建设北路二段四号  邮编： 610054 电话：028-83204355 急诊室电话： 028-83202481</span></p>
+    </div>
+  </div>
+</footer>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="/static/js/bootstrap.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="/static/js/holder.min.js"></script>
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/nivo-lightbox.min.js"></script>
+    <script src="/static/js/smoothscroll.js"></script>
+    <script src="/static/js/jquery.nav.js"></script>
+    <script src="/static/js/isotope.js"></script>
+    <script src="/static/js/imagesloaded.min.js"></script>
+    <script src="/static/js/custom.js"></script>
+  </body>
+</html>

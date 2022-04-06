@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登陆</title>
+
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+</head>
+<body>
+
+	<div style="height:30px;"></div>
+
+	<div class="login-wrap">
+		<div class="login-html">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked /><label for="tab-1" class="tab">用户快速登录</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up" /><label for="tab-2" class="tab">用户/医生密码登陆</label>
+			<div class="login-form">
+				<div class="sign-in-htm">
+					<form action="/loginsend2/" method="get" >
+					<div class="group">
+						<label for="user" class="label">手机号</label>
+						<input id="user" type="text" class="input" name="tel_num" value="{{tel_num}}"/>
+					</div>
+					<div class="group">
+						<input id="user" type="submit" class="input" value="获取验证码" />
+					</div>
+					</form>
+					<form action="/fastlogin/" method="get">
+					<div class="group">
+						<label for="pass" class="label">验证码</label>
+						<input id="pass" type="text" class="input" name="yz_num" />
+					</div>
+						<input type="hidden" name="telnum" value="{{telnum}}">
+                         <input type="hidden" name="zyz" value="{{zyz}}">
+					<div class="group">
+						<input type="submit" class="button" value="登录" />
+					</div>
+
+				</form>
+				</div>
+				<div class="sign-up-htm">
+					<form action="/normallogin/" method="get">
+					<div class="group">
+						<label for="user" class="label">用户手机号或医生ID号</label>
+						<input id="user" type="text" class="input" name = "tel_num"/>
+					</div>
+					<div class="group">
+						<label for="pass" class="label">密码</label>
+						<input id="pass" type="password" class="input" data-type="password" name="password"/>
+					</div>
+					<div class="group">
+						<input type="submit" class="button" value="登陆" />
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

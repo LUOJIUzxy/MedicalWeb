@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>注册</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="form-group" action="/yanzheng/" method="get">
+                            <div class="form-group">
+                                <label for="">手机号</label>
+                                    <input class="form-control" type="text" name="tel_num" value="{{tel_num}}">
+                                    <input class="btn btn-primary" type="submit" id="getAuthcode" value="获取验证码"
+                                             style="margin-top: 15px;float: right;">
+                            </div>
+                    </form>
+
+                    <form class="form-group" action="/register/" method="get">
+                            <div class="form-group">
+                                <label for="">验证码</label>
+                                <input class="form-control" type="text" name="yz_num">
+                            </div>
+                            <div class="form-group">
+                                <label for="">真实姓名</label>
+                                <input class="form-control" type="text" name="realname">
+                            </div>
+                            <div class="form-group">
+                                <label for="">身份证号码</label>
+                                <input class="form-control" type="text" name="idnumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="">性别</label>
+                                <input class="form-control" type="text" name="gender">
+                            </div>
+                            <div class="form-group">
+                                <label for="">请设置密码</label>
+                                <input class="form-control" type="password" name="password">
+                            </div>
+                            <input type="hidden" name="telnum" value="{{telnum}}">
+                            <input type="hidden" name="zyz" value="{{zyz}}">
+                           <input type="submit" value="注册" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
